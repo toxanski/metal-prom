@@ -132,146 +132,143 @@ body {
   // background-color: rgb(175, 175, 175);
 }
 
-/*header start*/
 .header {
   position: relative;
   box-shadow: 0px 10px 12px #DDDDDD;
   padding: 29px 0 24px 0;
   z-index: 2;
-}
-
-.header__container {
-  display: flex;
-  align-items: center;
-  position:relative;
-}
-
-.logo-name {
-  display: inline-block;
-  margin-left: 30px;
-
-  &__title {
-    display: flex;
-    margin: 8px 0px 10px 0px;
-
-    & .logo-name--primary {
-      font-weight: 400;
-      color: #666666;
-    }
-  }
-}
-.contact-info {
-  display: flex;
-  margin-top: 11px;
-  margin-left: 29px;
-
-  &__line {
-    margin-right: 30px;
-    width: 2px;
-    height: 45px;
-    background: $primary-dark;
-  }
-
-  &__phone {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__call {
-    margin: 12px 0 0 26px;
-    position: relative;
-    & svg {
-      width: 16px;
-      height: 18px;
-      fill: $primary-dark;
-      position: absolute;
-      bottom: -2px;
-      left: -24px;
-    }
-    &:hover svg {
-      fill: $primary;
-    }
-    // &::before {
-    //   content: url('../img/phone.png');
-    //   position: absolute;
-    //   bottom: -2px;
-    //   left: -26px
-    // }
-  }
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-grow: 1;
-  height: 20px;
-  max-width: 590px;
-  margin-left: auto;
-
-  &__item {
+  &__logo {
     text-decoration: none;
-    @extend %h5;
-    position: relative;
+  }
 
-    &:after {
-      content: url('../img/down-arrow.png');
-      position: absolute;
-      top: 0;
-      right: -24px;
-
-      &:hover {
-        transform: rotate(180deg);
+  &__container {
+    display: flex;
+    align-items: center;
+    position:relative;
+  }
+  .logo-name {
+    display: inline-block;
+    margin-left: 30px;
+  
+    &__title {
+      display: flex;
+      margin: 8px 0px 10px 0px;
+  
+      & .logo-name--primary {
+        font-weight: 400;
+        color: #666666;
       }
     }
   }
-}
-
-.icons-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: auto;
-  flex-basis: 118px;
-
-  .burger {
-    display: block;
-    position: relative;
-    width: 20px;
-    height: 15px;
-    margin: 0 auto;
+  .contact-info {
+    display: flex;
+    margin-top: 11px;
+    margin-left: 29px;
+  
     &__line {
-      display: block;
-      height: 3px;
-      background: $black-color;
-
-      &::before {
-        content: '';
+      margin-right: 30px;
+      width: 2px;
+      height: 45px;
+      background: $primary-dark;
+    }
+  
+    &__phone {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    &__call {
+      margin: 12px 0 0 26px;
+      position: relative;
+      & svg {
+        width: 16px;
+        height: 18px;
+        fill: $primary-dark;
+        position: absolute;
+        bottom: -2px;
+        left: -24px;
+      }
+      &:hover svg {
+        fill: $primary;
+      }
+      // &::before {
+      //   content: url('../img/phone.png');
+      //   position: absolute;
+      //   bottom: -2px;
+      //   left: -26px
+      // }
+    }
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    height: 20px;
+    max-width: 590px;
+    margin-left: auto;
+  
+    &__item {
+      text-decoration: none;
+      @extend %h5;
+      position: relative;
+  
+      &:after {
+        content: url('../img/down-arrow.png');
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: $black-color;
+        right: -24px;
       }
-
-      &::after {
+      &:last-child::after {
         content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: $black-color;
       }
     }
   }
-
-  &__search {
-    cursor: pointer;
+  .icons-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 62px;
+    flex-basis: 118px;
+  
+    .burger {
+      display: block;
+      position: relative;
+      width: 20px;
+      height: 15px;
+  
+      &__line {
+        display: block;
+        height: 3px;
+        background: $black-color;
+  
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: $black-color;
+        }
+  
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $black-color;
+        }
+      }
+    }
+  
+    &__search {
+      cursor: pointer;
+    }
   }
 }
-/*header end*/
 
 .tabs {
   padding: 24px 0 22px 0;
@@ -306,12 +303,13 @@ body {
 
     .product-carousel {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      flex-direction: column;
+
       border: 1px solid #E1E1E1;
-      max-width: 200px;
-      width: 20%;
+      // max-width: 200px;
+      width: 15%;
       padding: 22px 0;
 
       &__button-prev {
@@ -331,8 +329,8 @@ body {
 
     &__image {
       padding: 50px 0;
-      max-width: 755px;
-      width: 80%;
+      // max-width: 755px;
+      width: 50%;
       position: relative;
       border-top: 1px solid $light-gray-color;
       border-bottom: 1px solid $light-gray-color;
@@ -348,8 +346,8 @@ body {
     }
 
     .card-info {
-      max-width: 612px;
-      width: 100%;
+      // max-width: 612px;
+      width: 35%;
       background-color: $light-gray-color;
       display: flex;
       flex-direction: column;
@@ -497,12 +495,14 @@ body {
     }
 
     .specifications-product {
-      display: flex;
-      justify-content: space-between;
-
+      &__content {
+        display: flex;
+        justify-content: space-between;
+      }
       .text-about-product {
         line-height: 1.6;
         max-width: 878px;
+        width: 100%;
         display: inline-block;
   
         &__short-descr {
@@ -527,26 +527,7 @@ body {
         &__img {
           margin-bottom: 50px;
         }
-
-        &__docs {
-          margin-top: 56px;
-
-          &-title {
-            font-weight: 600;
-            margin-bottom: 25px;
-          }
-          & a {
-            color: $primary-dark;
-            &:hover {
-              color: $primary;
-            }
-          }
-        }
-        &__pdf {
-          margin-bottom: 10px;
-        }
       }
-  
       .product-tables {
         display: inline-block;
         vertical-align: top;
@@ -566,12 +547,14 @@ body {
           background-color: $light-gray-color;
         }
         .table {
+          width:100%;
           border-collapse:collapse;
           border-spacing:0;
           &, & td {
             border: 1px solid #E1E1E1;
           }
           & td {
+            word-wrap: break-word;
             padding-left: 20px;
             height: 40px;
   
@@ -582,18 +565,39 @@ body {
           &__sm-column {
             width: 242px;
           }
-  
-          &__jet-link {
-            @extend %link;
+          .tech-table {
+            &__jet-link {
+              @extend %link;
+            }
           }
         }
       }
     }
-  }
-  
-}
+    .product-docs {
+      margin-top: 56px;
 
+      &-title {
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+      & a {
+        color: $primary-dark;
+        &:hover {
+          color: $primary;
+        }
+      }
+      &__link {
+        line-height: 30px;
+      }
+      &__pdf {
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+}
 .recommended {
+
   background-color: $light-gray-color;
   padding: 120px 0 196px 0;
   &__title {
@@ -648,6 +652,10 @@ body {
       padding: 40px 19px 42px 19px;
       text-align: center;
       position: relative;
+      margin-right: 28px;
+      &:last-child {
+        margin: 0;
+      }
     }
     &__img {
       max-height: 282px;
@@ -813,6 +821,54 @@ body {
   }
 }
 
+@media (max-width: 1600px) {
+  .recommended {
+    .rec-carousel {
+      &__item {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .header {
+    .nav {
+      display: none;
+    }
+    .icons-list {
+      margin-left: auto;
+    }
+  }
+  .product {
+    .card-info {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+
+  .product {
+    .description {
+      .specifications-product__content {
+        flex-direction: column;
+        .product-tables {
+          margin-top: 50px;
+          max-width: none;
+          display: flex;
+          justify-content: space-between;
+          &__tech-table-container {
+            margin-right: 40px;
+          }
+
+        }
+      }
+    }
+  }
+}
 
 
 
